@@ -1,0 +1,23 @@
+.product__box{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    max-width: 300px;
+    background-color: black;
+    color: rgb(97, 218, 251);
+    font-size: 1.2rem;
+}
+
+.qty__span{
+    margin: 0px 10px;
+}
+
+.reactBtn{
+    background-color: rgb(97, 218, 251);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
