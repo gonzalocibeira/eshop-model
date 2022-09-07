@@ -1,19 +1,9 @@
 import React, {useState} from 'react'
 import "./body.css"
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 
-export default function ItemCount({stock, initial, onAdd}) {
+export default function ItemCount({stock, initial, onAdd, alertStock}) {
 
     const [qty, setQty] = useState(initial);
-
-    const SwalStock = withReactContent(Swal)
-
-    const alertStock = () => {SwalStock.fire({
-        title: <strong>No hay suficiente stock!</strong>,
-        html: <i>El stock disponible para este producto es de {stock} unidad/es.</i>,
-        icon: 'error'
-    })};
 
     const minusItem = () => {
         qty === initial ? setQty(1) : setQty(qty - 1);
