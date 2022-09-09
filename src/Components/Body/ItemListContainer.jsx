@@ -1,28 +1,31 @@
 import React from "react";
-import ItemCount from "./ItemCount";
+import "./body.css"
+/* DESAFIO CLASE 5 import ItemCount from "./ItemCount";
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import withReactContent from 'sweetalert2-react-content' */
+import ItemList from "./ItemList";
 
 const ItemListContainer = ({greeting}) => {
 
-    const MySwal = withReactContent(Swal)
+/* DESAFIO CLASE 5  const MySwal = withReactContent(Swal)
 
     const onAdd = (itemQty) => {MySwal.fire({
-        title: <strong>Producto añadido!</strong>,
-        html: <i>Has añadido {itemQty} producto/s al carrito.</i>,
+        title: <strong>Product added!</strong>,
+        html: <i>You've added {itemQty} product/s to your cart.</i>,
         icon: 'success'
     })};
 
     const alertStock = (stock) => {MySwal.fire({
-        title: <strong>No hay suficiente stock!</strong>,
-        html: <i>El stock disponible para este producto es de {stock} unidad/es.</i>,
+        title: <strong>Not enough stock!</strong>,
+        html: <i>Stock available for this product is {stock} unit/s.</i>,
         icon: 'error'
-    })};
+    })}; */
 
     return(
         <>
             <h2>{greeting}</h2>        
-            <ItemCount stock={6} initial={1} onAdd={onAdd} alertStock={alertStock}/>
+            {/* DESAFIO CLASE 5 <ItemCount stock={6} initial={1} onAdd={onAdd} alertStock={alertStock}/> */}
+            <ItemList />
         </>
     )
 };

@@ -20,4 +20,40 @@
     font-weight: 700;
     font-size: 1.3rem;
     margin-bottom: 5px;
+    border-radius: 5px;
+    min-width: 30px;
+}
+
+.itemCard{
+    display: flex;
+    color: rgb(97, 218, 251);
+    background-color: black;
+    width: 400px;
+    margin: 5px;
+
+}
+
+.itemDesc{
+    margin-left: 10px;
+}
+
+.priceAndDesc{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.itemDescBtn{
+    margin-left: 10px;
+    background-color: rgb(97, 218, 251);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    min-width: 30px;
+}
+
+.itemImg{
+    width:10vw;
+    height: 100%;
 }
