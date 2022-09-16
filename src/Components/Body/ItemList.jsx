@@ -21,7 +21,7 @@ export default function ItemList() {
     }, []);    
 
     return (
-        <div classname="itemListContainer" style={{display: "flex", flexWrap: "wrap", justifyContent: "center"}}>
+        <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center"}}>
             {products.map(el => <Item key={el.id} title={el.title} desc={el.desc} price={el.price} picUrl={el.picUrl}/>)}
         </div>
     )

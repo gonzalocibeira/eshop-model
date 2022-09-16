@@ -1,5 +1,4 @@
 import React from "react";
-import "./body.css"
 /* DESAFIO CLASE 5 import ItemCount from "./ItemCount";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content' */
