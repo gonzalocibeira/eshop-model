@@ -1,6 +1,10 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-export default function Item({title, desc, price, picUrl}) {
+export default function Item({pid, title, desc, price, picUrl}) {
+
+    const itemPath = "/product/"+pid;
+
     return (
         <div className="itemCard">
             <img className="itemImg" src={picUrl} alt="Pic of product"/>
@@ -9,7 +13,9 @@ export default function Item({title, desc, price, picUrl}) {
                 <p>{desc}</p>
                 <div className="priceAndDesc">
                     <p>Price: {price}€</p>
-                    <button className="itemDescBtn">See details</button>
+                    <Link to={itemPath}>
+                        <button className="itemDescBtn">See details</button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -4,14 +4,21 @@ import "./Components/Body/body.css";
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/Body/ItemListContainer';
 import ItemDetailContainer from './Components/Body/ItemDetailContainer';
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 const App = () => {
-  const greet = "This is an eShop for react components and CSS styles.";
+  const greet = "This is a model eShop created with React JS";
   return (
     <>
-      <NavBar />
-      <ItemListContainer greeting={greet}/>
-      <ItemDetailContainer/>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting={greet}/>}/>
+          <Route path="/category/:categoryId" element={<ItemListContainer greeting={greet}/>}/>          
+          <Route path="/product/:productId" element={<ItemDetailContainer/>}/>
+          <Route path="/cart" element=""/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 };

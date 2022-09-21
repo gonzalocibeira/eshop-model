@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import ItemDetail from './ItemDetail'
+import { useParams } from "react-router-dom";
+import ItemDetail from './ItemDetail';
+import Spinner from './Spinner';
 
 export default function ItemDetailContainer() {
 
-    let fakeStoreURL = "https://fakestoreapi.com/products/5";
+    let pid = useParams();
+    console.log(pid.productId);
 
-    const [item, setItem] = useState();
+    let productUrl = "https://fakestoreapi.com/products/"+pid.productId;
+    console.log(productUrl);
+
+    const [item, setItem] = useState("");
+    const [isLoading, setisLoading] = useState(true);
 
     useEffect(() => {
-        fetch(fakeStoreURL)
+        fetch(productUrl)
         .then(res => res.json())
         .then(data => setItem(data))
-    }, []);
+        .catch(error => console.log(error))
+        .finally(() => setisLoading(false))
+    }, [pid]);
 
     return (
-        <ItemDetail title={item.title} desc={item.description} img={item.image} price={item.price}/>
-        //<h2>Probando</h2>
+        <div>
+            {isLoading ? <Spinner/> : <ItemDetail title={item.title} desc={item.description} img={item.image} price={item.price}/>}
+        </div>
+        
     )
 }
