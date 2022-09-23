@@ -6,10 +6,8 @@ import Spinner from './Spinner';
 export default function ItemDetailContainer() {
 
     let pid = useParams();
-    console.log(pid.productId);
 
     let productUrl = "https://fakestoreapi.com/products/"+pid.productId;
-    console.log(productUrl);
 
     const [item, setItem] = useState("");
     const [isLoading, setisLoading] = useState(true);

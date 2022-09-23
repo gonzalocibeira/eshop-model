@@ -15,7 +15,6 @@ export default function ItemCount({stock, initial, onAdd, alertStock}) {
 
     return (
         <div className="product__box">
-            <p>Component 1</p>
             <div>
                 <button className="reactBtn" onClick={minusItem}>-</button>
                 <span className="qty__span">{qty}</span>
