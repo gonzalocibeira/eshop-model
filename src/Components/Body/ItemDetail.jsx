@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import { CartContext } from '../../Context/CartContext';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
 
-export default function ItemDetail({title, desc, img, price} ) {
+export default function ItemDetail({id, title, desc, img, price}) {
+
+    const {addProduct, removeProduct} = useContext(CartContext);
 
     const [qty, setQty] = useState("");
 
@@ -17,7 +20,7 @@ export default function ItemDetail({title, desc, img, price} ) {
         icon: 'success'
     });
     setQty(itemQty);
-    console.log(itemQty)
+    addProduct(id, title, desc, img, price, itemQty);
 };
 
     const alertStock = (stock) => {MySwal.fire({
@@ -25,6 +28,11 @@ export default function ItemDetail({title, desc, img, price} ) {
         html: <i>Stock available for this product is {stock} unit/s.</i>,
         icon: 'error'
     })};
+
+    const onRemove = (id) => {
+        setQty("");
+        removeProduct(id);
+    };
 
 
     return (
@@ -38,8 +46,9 @@ export default function ItemDetail({title, desc, img, price} ) {
             {qty === "" ?  
             <ItemCount stock={Math.floor(Math.random()*10)} initial={1} onAdd={onAdd} alertStock={alertStock}/>:
             <Link to="/cart">
-                <button className="reactBtn">Finish my purchase of {qty} items</button>
+                <button className="reactBtn">Finish purchase</button>
             </Link>}
+            <button onClick={() => onRemove(id)} className="reactBtn">Remove from cart</button>
         </div>
     )
 }

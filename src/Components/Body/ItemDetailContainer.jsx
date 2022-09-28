@@ -22,7 +22,7 @@ export default function ItemDetailContainer() {
 
     return (
         <div>
-            {isLoading ? <Spinner/> : <ItemDetail title={item.title} desc={item.description} img={item.image} price={item.price}/>}
+            {isLoading ? <Spinner/> : <ItemDetail id={item.id} title={item.title} desc={item.description} img={item.image} price={item.price}/>}
         </div>
         
     )
