@@ -23,9 +23,10 @@ export default function Cart() {
             {cart.map((product) => {
                   return <CartItem key={product.id} name={product.title} qty={product.itemQty} price={product.price} id={product.id}/>
             })}
-            <h3>Your total is: {cartTotal}€</h3>
+            <h3>Your total is: {cartTotal.toFixed(2)}€</h3>
           </div>
           <button onClick={clearCart} className="reactBtn">Clear cart</button>
+          <button className="reactBtn">Buy cart</button>
         </>
       }
     </div>

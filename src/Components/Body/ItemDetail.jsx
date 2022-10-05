@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
 
-export default function ItemDetail({id, title, desc, img, price}) {
+export default function ItemDetail({id, stock, title, desc, img, price}) {
 
     const {addProduct, removeProduct} = useContext(CartContext);
 
@@ -44,7 +44,7 @@ export default function ItemDetail({id, title, desc, img, price}) {
             </div>
             <p style={{fontWeight:"700", fontSize:"30px"}}>${price}</p>
             {qty === "" ?  
-            <ItemCount stock={Math.floor(Math.random()*10)} initial={1} onAdd={onAdd} alertStock={alertStock}/>:
+            <ItemCount stock={stock} initial={1} onAdd={onAdd} alertStock={alertStock}/>:
             <Link to="/cart">
                 <button className="reactBtn">Finish purchase</button>
             </Link>}
