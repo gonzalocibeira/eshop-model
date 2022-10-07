@@ -9,7 +9,7 @@ export default function Item({pid, title, desc, price, picUrl}) {
         <div className="itemCard">
             <img className="itemImg" src={picUrl} alt="Pic of product"/>
             <div className="itemDesc">
-                <h2>{title}</h2>
+                <h3>{title}</h3>
                 <p>{desc}</p>
                 <div className="priceAndDesc">
                     <p>Price: {price}€</p>

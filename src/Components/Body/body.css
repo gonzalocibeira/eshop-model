@@ -11,6 +11,14 @@
     font-size: 1.2rem;
 }
 
+.greeting{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
 .qty__span{
     margin: 0px 10px;
 }
@@ -24,23 +32,50 @@
     min-width: 30px;
 }
 
+.reactBtnNo{
+    background-color: rgb(220, 226, 228);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    min-width: 30px;
+}
+
+.reactBtnDel{
+    background-color: rgb(228, 51, 28);
+    font-weight: 1000;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    min-width: 20px;
+}
+
 .itemCard{
     display: flex;
     color: rgb(97, 218, 251);
     background-color: black;
-    width: 400px;
+    width: 500px;
+    height: 200px;
     margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
 }
 
+.itemCard:hover{
+    transform: scale(1.02);
+}
+
 .itemDesc{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
     margin-left: 10px;
 }
 
 .priceAndDesc{
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .itemDescBtn{
@@ -75,6 +110,32 @@
     background-color: black;
     color: rgb(97, 218, 251);
     font-size: 1.2rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.checkout{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    min-height: 30vh;
+}
+
+.cartItem{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    margin-top: 15px;
+}
+
+.emptyCart{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    min-height: 30vh;
 }
 
 /* Spinner CSS */

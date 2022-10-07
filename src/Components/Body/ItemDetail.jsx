@@ -37,18 +37,22 @@ export default function ItemDetail({id, stock, title, desc, img, price}) {
 
     return (
         <div className="itemDetailCard">
-            <h2>{title}</h2>
+            <h3>{title}</h3>
             <div style={{display: "flex", flexDirection: "row", justifyContent:"flex-end", alignItems:"center", backgroundColor: "white"}}>
                 <img src={img} alt={title} className="itemDetailImg"/>
-                <p style={{color: "black", fontWeight:"700", marginLeft:"10px"}}>{desc}</p>
+                <p style={{color: "black", fontWeight:"700", marginLeft:"10px", fontSize:"15px"}}>{desc}</p>
             </div>
-            <p style={{fontWeight:"700", fontSize:"30px"}}>${price}</p>
+            <p style={{fontWeight:"700", fontSize:"30px", marginTop:5, marginBottom:2}}>Price: {price}€</p>
             {qty === "" ?  
-            <ItemCount stock={stock} initial={1} onAdd={onAdd} alertStock={alertStock}/>:
-            <Link to="/cart">
-                <button className="reactBtn">Finish purchase</button>
-            </Link>}
-            <button onClick={() => onRemove(id)} className="reactBtn">Remove from cart</button>
+            <ItemCount stock={stock} initial={1} onAdd={onAdd} alertStock={alertStock}/>
+            :
+            <div>
+                <button onClick={() => onRemove(id)} className="reactBtnNo">Remove product from cart</button>
+                <Link to="/cart">
+                    <button className="reactBtn">Go to my cart</button>
+                </Link>
+            </div>
+            }
         </div>
     )
 }

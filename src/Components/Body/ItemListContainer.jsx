@@ -35,7 +35,9 @@ const ItemListContainer = ({greeting}) => {
 
     return(
         <>
-            <h2>{greeting}</h2>
+            <div className="greeting">
+                <h2>{greeting}</h2>
+            </div>
             {isLoading ? <Spinner/> : <ItemList products={products}/>}
         </>
     )

@@ -14,7 +14,11 @@ export default function ItemCount({stock, initial, onAdd, alertStock}) {
     };
 
     return (
-        <div className="product__box">
+        <div>
+            {stock === 0?
+            <h2>Out of stock</h2>
+            :
+            <div className="product__box" style={{marginTop:0}}>
             <div>
                 <button className="reactBtn" onClick={minusItem}>-</button>
                 <span className="qty__span">{qty}</span>
@@ -22,5 +26,8 @@ export default function ItemCount({stock, initial, onAdd, alertStock}) {
             </div>
             <button className="reactBtn" onClick={() =>{onAdd(qty)}}>Add to cart</button>
         </div>
+            }
+        </div>
+
     )
 }
