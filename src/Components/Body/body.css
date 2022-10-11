@@ -118,7 +118,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
+    margin-top: 2vh;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     min-height: 30vh;
 }
