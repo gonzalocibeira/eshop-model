@@ -54,7 +54,7 @@ export default function Cart() {
 
     } else {
         MySwal.fire({
-        title: <strong>Please review your information</strong>,
+        title: <strong>Please review your checkout details</strong>,
         html: <i>Either you left a blank field, or your email is invalid.</i>,
         icon: 'warning'
       });

@@ -1,3 +1,13 @@
 .body {
   background-color: black;
-};
+}
+
+.content-container{
+  min-height: calc(100vh - 53px);
+}
+
+.footer--pin{
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
